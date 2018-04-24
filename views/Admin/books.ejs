@@ -1,0 +1,33 @@
+<% include header %>
+<div class="w3-top" style="position:relative;bottom:10em">
+    <div class="w3-bar w3-white w3-wide w3-padding w3-card" >
+      <a href="books" class="w3-bar-item w3-button"><b>Northwest</b> Library</a>
+      <!-- Float links to the right. Hide them on small screens -->
+      <div class="w3-right w3-hide-small">
+
+        
+        <a href="books" class="w3-bar-item w3-button" style="background-color: grey;color:white">Books</a>
+        <a href="addBook" class="w3-bar-item w3-button">Add Book</a>
+        <!-- <a href="UserReq" class="w3-bar-item w3-button">User Requests</a> -->
+        <a href="/logout" class="w3-bar-item w3-button">Logout</a>
+      </div>
+    </div>
+</div>
+
+<div class="w3-main w3-content w3-padding" style="max-width:1200px;margin-top:100px">
+    
+      <!-- First Photo Grid-->
+      <div class="w3-row-padding w3-padding-16 w3-center" id="food">
+                <% console.log(books) %>
+                <% for (ele of Object.entries(books)) { %>
+                    <% console.log(ele[1]) %>
+                    <div class="w3-quarter">
+                        <img src="<%= ele[1].image %>" alt="Sandwich" style="width:100%;height: 20em">
+                        <h3><%= ele[1].title %> </h3>
+                        <p>  <%= ele[1].published %></p>
+                      </div>
+                    <% } %>
+          </div>
+      </div>
+
+

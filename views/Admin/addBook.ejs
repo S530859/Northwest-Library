@@ -1,0 +1,128 @@
+<% include header %>
+  <div class="w3-top" style="position:relative;bottom:14em">
+    <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+      <a href="books" class="w3-bar-item w3-button">
+        <b>Northwest</b> Library</a>
+      <!-- Float links to the right. Hide them on small screens -->
+      <div class="w3-right w3-hide-small">
+
+
+        <a href="books" class="w3-bar-item w3-button">Books</a>
+        <a href="addBook" class="w3-bar-item w3-button" style="background-color: grey;color:white">Add Book</a>
+        <!-- <a href="UserReq" class="w3-bar-item w3-button">User Requests</a> -->
+        <a href="/logout" class="w3-bar-item w3-button">Logout</a>
+      </div>
+    </div>
+  </div>
+
+
+  <style>
+    .inputstl {
+      padding: 9px;
+      border: solid 1px #173955;
+      outline: 0;
+      background: -webkit-gradient(linear, left top, left 25, from(#FFFFFF), color-stop(4%, #AACCE8), to(#FFFFFF));
+      background: -moz-linear-gradient(top, #FFFFFF, #AACCE8 1px, #FFFFFF 25px);
+      box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 8px;
+      -moz-box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 8px;
+      -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 8px;
+
+    }
+
+    form {
+      position: relative;
+      top: 10em;
+    }
+  </style>
+
+
+  <form class="form-horizontal" role="form" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+      <label for="name1" class="col-sm-2 control-label">Title:</label>
+      <div class="col-sm-4">
+        <input type="text" class="form-control inputstl" id="Title" name="title" placeholder="Enter Book title">
+      </div>
+    </div>
+
+
+
+    <div class="form-group">
+      <label for="author" class="col-sm-2 control-label">Author:</label>
+      <div class="col-sm-4">
+        <input type="text" class="form-control inputstl" id="author" name="author" placeholder="Enter Author Name">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="version" class="col-sm-2 control-label">Published:</label>
+      <div class="col-sm-4">
+        <input type="number" class="form-control inputstl" id="version" name="published" placeholder="Enter Version">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="selphoto" class="col-sm-2 control-label">Cover Image:</label>
+      <div class="col-sm-5">
+        <input type="file" class="inputstl" id="selphoto" name="file">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-sm-5">
+        <input type="hidden" id="url" name="url">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-4">
+        <button type="submit" class="btn btn-lg btn-block btn-primary">Add Book</button>
+      </div>
+    </div>
+  </form>
+  </div>
+  <script>
+    $('#selphoto').filestyle({
+      buttonName: 'btn-primary',
+      buttonText: ' Upload an Image',
+      iconName: 'glyphicon glyphicon-upload'
+    });
+
+  </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="js/bootstrap.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyCK-3hPn60PbTsGJb-uNUwdZtF22ew3LpY",
+      authDomain: "northwest-library.firebaseapp.com",
+      databaseURL: "https://northwest-library.firebaseio.com",
+      projectId: "northwest-library",
+      storageBucket: "northwest-library.appspot.com",
+      messagingSenderId: "153392017687"
+    };
+    firebase.initializeApp(config);
+    $('#selphoto').on('change', function (e) {
+      file = e.target.files[0]
+      var datatask = firebase.storage().ref('images').child(file.name).put(file)
+
+      datatask.on('state_changed', function (snapshot) {
+      }, function (error) {
+        // Handle unsuccessful uploads
+      }, function () {
+        // Handle successful uploads on complete
+        // For instance, get the download URL: https://firebasestorage.googleapis.com/...
+        var downloadURL = datatask.snapshot.downloadURL;
+        console.log(downloadURL)
+        document.getElementById('url').value = downloadURL
+      });
+
+    })
+
+  </script>
+
+
+
+  </body>
+
+  </html>

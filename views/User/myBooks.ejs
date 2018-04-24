@@ -1,0 +1,96 @@
+<% include header %>
+<div class="w3-top" style="position:relative;bottom:10em">
+    <div class="w3-bar w3-white w3-wide w3-padding w3-card" >
+      <a href="allBooks" class="w3-bar-item w3-button"><b>Northwest</b> Library</a>
+      <!-- Float links to the right. Hide them on small screens -->
+      <div class="w3-right w3-hide-small">
+
+        
+        <a href="allBooks" class="w3-bar-item w3-button">All Books</a>
+        <a href="myBooks" class="w3-bar-item w3-button" style="background-color: grey;color:white">My Books</a>
+        <a href="about" class="w3-bar-item w3-button">About</a>
+        <a href="contact" class="w3-bar-item w3-button">Contact</a>
+        <a href="edit" class="w3-bar-item w3-button">Welcome <%= user.displayName %></a>
+        <a href="/logout" class="w3-bar-item w3-button">Logout</a>
+      </div>
+    </div>
+</div>
+
+<div class="w3-main w3-content w3-padding" style="max-width:1200px;margin-top:100px">
+    
+      <!-- First Photo Grid-->
+      <div class="w3-row-padding w3-padding-16 w3-center" id="food">
+                <% console.log("testing")
+                 console.log(Books)
+                if(userBooks != null && userBooks != undefined){
+                   for (ele of Object.entries(Books)) { 
+                  console.log(ele)
+                  console.log(user.uid) 
+                
+                for (e of Object.entries(userBooks)) { 
+                         if(ele[0] == e[1]){ %>
+                          <div class="w3-quarter">
+                            <img src="<%= ele[1].image %>" alt="Sandwich" style="width:100%;height: 20em">
+                            <h3><%= ele[1].title %> </h3>
+                            <p>  <%= ele[1].published %></p>
+                            <!-- <button type="button" class="btn btn-primary" onclick="clicked('<%= user.uid %>','<%= ele[0] %>')">Request Extension</button> -->
+                          </div>
+
+                       <%  }
+                   }
+                    
+               }
+               }else{ %>
+                No Books
+                <% } %>
+          </div>
+      </div>
+
+      <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
+      <script>
+        // Initialize Firebase
+        var config = {
+          apiKey: "AIzaSyCK-3hPn60PbTsGJb-uNUwdZtF22ew3LpY",
+          authDomain: "northwest-library.firebaseapp.com",
+          databaseURL: "https://northwest-library.firebaseio.com",
+          projectId: "northwest-library",
+          storageBucket: "northwest-library.appspot.com",
+          messagingSenderId: "153392017687"
+        };
+        firebase.initializeApp(config);
+      
+      
+      
+        var clicked = (id,ele) => {
+          console.log("clicked" + id)
+           var ref = firebase.database().ref('node-client/requests').child(`${id}`)
+           var d
+           ref.once('value').then(function(snapshot) {
+             var result = []
+             console.log(snapshot.val())
+             if(snapshot.val() !=null){
+              for(e of snapshot.val().books) {
+                 if(e != undefined){
+                    result.push(e)
+                 }
+              }
+             }
+            
+              result.push(ele)
+             if(snapshot.val() != null || snapshot.val() != null ) {
+              ref.set({
+               books:  result
+             })
+             }else{
+               ref.set({
+                 books: [ele]
+               })
+             }
+            
+           })
+             
+         }
+      
+      
+      
+      </script>

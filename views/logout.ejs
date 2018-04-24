@@ -1,0 +1,10 @@
+<form action="/logout" method="get">
+    <div class="col-md-12">
+        <button id="btn-logout" type="submit" class="btn btn-success col-md-offset-11">signout </button>
+    </div>
+<div class="col-md-12">
+        <% if(user) {%>
+       <p style="position:fixed;right: 10px">Welcome <%=  user %></p>
+       <% } %>
+    </div>
+</form>

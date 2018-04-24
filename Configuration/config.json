@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "northwest-library",
+  "private_key_id": "bc54224fc8a3b5d677876b29bee327e6be0af36a",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQC8QsVAlWUqk1Dn\nf6+QL3iWo7EHycv3kMKPEx0KPMHShzCWJZZhPde78d3Y4xuRzPzRfDG/afjua5IM\n7IsWpeCCEq3kCt/zjQR8ujDjfKAn704EbJzvz2inuc/J83NZ86HNgGPGVludkkSr\nHGE0ED3Q2lFhL603QFFWvp2BJK3ZtJLA9+pkcq8BZJAt/dQ4BDVz5YrZ33GcU+Pz\npWiHFkY9HU2izQ9J0BCWCN8U05PKRKTWOCtxJDOHPVSQFoFa3VDbYJmWzxPJYS5B\ndOc965zmTazevVdc9O/Q8/tFlQF6PHvTXMQHh8lon4/2qxP7jHtYeB8AYlb06tkv\ncmTeOmflAgMBAAECgf9+10AhBaGNvoeX7YonH8MofcBfA2J7EgS0liwm3OwAt38f\nUlcrupC6VyD+YWbia0wOz7A5WQnAbXvWZXeXhCtnVKFHSrz6HY1kAFVaCq9h4GdP\nIQridpVcFC2B44334QJPT9lt/U5+/yg8IXAerMELEPKF1+AsUOLDSJAUCPrA8E5A\nKP//7fvupzKad+Q/niRy5mWsu5zIRq/FmjFM0sS6ll5Dab8m28TO1+7pCit7+mUE\nrG/vS/oPFJ8wvMeTx448eeKjbvNrgLr0N3T6C++Kd7PE5kpfMcd4i4Z8zWkp7rjO\n2blX7P4CcgecK4J4XxEkeOo+sIa5RjD8MB95C5kCgYEA25N/15Z265G7WimFPemM\nIIbSd88jMb4CFlWS80jCPpJZbiCzWYAF83Jx860/n3pTImU0hlpvQ31ZtM954wVv\nr1n1z5DI2GUKgyMcYvuiEfo4a8eRpwY96iJH4wfCxOehOvYFo9lyP9Gzb4Y+HAC8\ndjyVuj3H92Lp4V/If4LNZ6MCgYEA231vxMZB50McOSsLWhQ9DfgeGhIQ1RxphRN1\nY7s737H3D+PEvLqp1ccr+utNkNxDRPrxuKhZWu/A8AJbJzuFO24gZgCWPyQZpOnC\nxQVnaGzdxeiF4YdiJaeJqA8RiweoA1+p9qQ264pzSOQaItbbP/hvdh7NH/R2WKrd\nlJZkCtcCgYEAvIjZrHM1iO+IvtIH5jEycHtTHCxvO7a6dBLmKp6+qptezoClfqO+\neFo8Hc8UYgrWdyIPB41/G6P18ppzPcrdKuNDfQYEbknTzOXI6fTGJEmFSIYDOjbR\n0se8keOICSoZ9lZoYVfEEagtOgU6LzEyoRNEPLXvjSsRRsLHlTTqyaECgYEAkOKr\nbewlQsBVGBOm6a5kYx0+2ZzFSbf4m6Stn8jPjClQ2kdS7fYV+A0Cph6/U/lh2l4A\nRBG08kdDR+t2Ol6a4xEeB9cpVsLAvtCkBiQ8D32Vo3eLMMWKbyq5vps7zFege6Gh\nczMRIciBs0MHUaocjoyzHvjUFNztZjhcDiJ8JX8CgYBAYqsjxj8O0NHA0SWLUqES\nMkV249qG1nmTSN6ZvdggeS+FnNwrqrhrsCXcV/vuMpDfiW3LZb/zLYhGmh1fqmLH\nvJtDKX6nwpu0iVJLJDuS3ZXR89NlhzTJIMsyyoBHfLOiOaiR7IXHfZiCZbSqMo/l\nYY1texPX778lzx7dqvhQPQ==\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-33m71@northwest-library.iam.gserviceaccount.com",
+  "client_id": "103028440921578105360",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-33m71%40northwest-library.iam.gserviceaccount.com"
+}
